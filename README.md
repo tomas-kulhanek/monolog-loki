@@ -27,10 +27,8 @@ Below is a minimal example showing how to send logs to a Loki server:
 ```php
 use Monolog\Level;
 use Monolog\Logger;
-use Monolog\Handler\Curl\CurlHandler;
 use TomasKulhanek\Monolog\Loki\LokiHandler;
 
-// 1) Create a CurlHandler pointing at Loki's HTTP API
 $handler = new LokiHandler(
     'http://your-loki-host:3100/loki/api/v1/push',
     'username',
@@ -38,11 +36,10 @@ $handler = new LokiHandler(
     ['app'=>'My application', 'env'=>'production'],
     Level::Debug
 );
-// 2) Create your logger and push the handler
+
 $logger = new Logger('loki');
 $logger->pushHandler($handler);
 
-// 3) Log as usual
 $logger->info('User signed in', ['user_id' => 123]);
 ```
 

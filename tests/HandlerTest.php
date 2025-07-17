@@ -16,7 +16,7 @@ class HandlerTest extends \PHPUnit\Framework\TestCase
             'username',
             'password',
             'endpoint',
-            level: \Monolog\Level::Debug,
+            \Monolog\Level::Debug,
             client: $mockClient
         );
 
@@ -54,16 +54,13 @@ class HandlerTest extends \PHPUnit\Framework\TestCase
             'username',
             'password',
             'endpoint',
-            level: \Monolog\Level::Debug,
-            bubble: false,
+            \Monolog\Level::Debug,
             client: $mockClient
         );
         $handler = new LokiHandler(
             'endpoint',
             'username',
             'password',
-            level: \Monolog\Level::Debug,
-            bubble: false,
             syncHandler: $synchronousHandler
         );
         $handler->setFormatter(new LineFormatter());
@@ -82,16 +79,13 @@ class HandlerTest extends \PHPUnit\Framework\TestCase
             'username',
             'password',
             'endpoint',
-            level: \Monolog\Level::Debug,
-            bubble: false,
+            \Monolog\Level::Debug,
             client: $mockClient
         );
         $handler = new LokiHandler(
             'endpoint',
             'username',
             'password',
-            level: \Monolog\Level::Debug,
-            bubble: false,
             syncHandler: $synchronousHandler
         );
 

@@ -13,5 +13,15 @@
             <property name="spacingAfterLast" value="0" />
         </properties>
     </rule>
+
+    <rule ref="Generic.Files.LineLength">
+        <!-- běžný limit -->
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+        <!-- ale nevztahuje se na tests/ -->
+        <exclude-pattern>*/tests/*</exclude-pattern>
+    </rule>
     <arg name="extensions" value="php" />
 </ruleset>

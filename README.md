@@ -30,7 +30,7 @@ use Monolog\Logger;
 use TomasKulhanek\Monolog\Loki\LokiHandler;
 
 $handler = new LokiHandler(
-    'http://your-loki-host:3100/loki/api/v1/push',
+    'http://your-loki-host:3100',
     'username',
     'password',
     ['app'=>'My application', 'env'=>'production'],
